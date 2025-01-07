@@ -1,22 +1,22 @@
 # Extract from a text file
-# from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 
-# loader = TextLoader("speech.txt")
-# text_loader = loader.load()
-# text_loader
+loader = TextLoader("speech.txt")
+text_loader = loader.load()
+text_loader
 
-# # Extract from web page
-# from langchain_community.document_loaders import WebBaseLoader
-# import bs4
+# Extract from web page
+from langchain_community.document_loaders import WebBaseLoader
+import bs4
 
-# loader = WebBaseLoader(
-#     web_paths= ("https://en.wikipedia.org/wiki/Large_language_model",),
-#     bs_kwargs=dict(parse_only=bs4.SoupStrainer(
-#     class_ = ("mw-content-container","mw-page-container-inner")
-# )))
+loader = WebBaseLoader(
+    web_paths= ("https://en.wikipedia.org/wiki/Large_language_model",),
+    bs_kwargs=dict(parse_only=bs4.SoupStrainer(
+    class_ = ("mw-content-container","mw-page-container-inner")
+)))
 
-# web_page_loader = loader.load()
-# web_page_loader
+web_page_loader = loader.load()
+web_page_loader
 
 # Extract data from a PDF file
 from langchain_community.document_loaders import PyPDFLoader
